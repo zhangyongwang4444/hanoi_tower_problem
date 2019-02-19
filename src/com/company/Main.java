@@ -32,6 +32,16 @@ public class Main {
         MinStack minStack = new MinStack();
 
         minStack.push(5);
+        minStack.push(4);
+        minStack.push(2);
+        minStack.push(9);
+
+        minStack.getMin();
+
+        minStack.top();
+
+        minStack.pop();
+        minStack.getMin();
 
     }
 }

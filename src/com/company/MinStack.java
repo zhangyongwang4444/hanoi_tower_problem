@@ -38,8 +38,10 @@ class MinStack {
             return -1;
         }
         if (stack.peek() > 0) {
+            System.out.println((int) (min + stack.peek()));
             return (int) (min + stack.peek());
         } else {
+            System.out.println((int) min);
             return (int) min;
         }
     }
