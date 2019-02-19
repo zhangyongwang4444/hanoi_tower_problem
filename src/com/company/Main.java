@@ -26,12 +26,12 @@ public class Main {
 //        tower2.getDisks();
 
 
-        Difference difference = new Difference();
-        difference.findTheDifference("abc","abcd");
+//        Difference difference = new Difference();
+//        difference.findTheDifference("abc","abcd");
 
+        MinStack minStack = new MinStack();
 
-
-
+        minStack.push(5);
 
     }
 }
