@@ -4,50 +4,32 @@ package com.company;
 import java.util.Stack;
 
 class MinStack {
-    //存gap, 当前栈顶和之前的最小值的差值
-    Stack<Long> stack = new Stack<>();
-    long min = Integer.MIN_VALUE;
+    int min = Integer.MAX_VALUE;
+    Stack<Integer> stack = new Stack<Integer>();
 
     public void push(int x) {
-        if (stack.isEmpty()) {
-            stack.push(0L);//初始值存0
+        // 如果小于最小值min就push2个数据到栈中
+        if (x <= min) {
+            stack.push(min);
             min = x;
-        } else {
-            stack.push(x - min);//存gap
-            if (x < min) {
-                min = x;
-            }
         }
+        stack.push(x);
     }
 
     public void pop() {
-        if (stack.isEmpty()) {
-            return;
-        }
-        long peek = stack.peek();
-        if (peek > 0) {
-            stack.pop();
-        } else {
-            min -= peek;
-            stack.pop();
+        // 如果拿出来的是最小值，就删除2个
+        if (stack.pop() == min) {
+            min = stack.pop();
         }
     }
 
     public int top() {
-        if (stack.isEmpty()) {
-            return -1;
-        }
-        if (stack.peek() > 0) {
-            System.out.println((int) (min + stack.peek()));
-            return (int) (min + stack.peek());
-        } else {
-            System.out.println((int) min);
-            return (int) min;
-        }
+        System.out.println(stack.peek());
+        return stack.peek();
     }
 
     public int getMin() {
         System.out.println(min);
-        return (int) min;
+        return min;
     }
 }

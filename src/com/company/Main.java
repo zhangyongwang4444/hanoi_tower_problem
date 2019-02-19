@@ -36,12 +36,18 @@ public class Main {
         minStack.push(2);
         minStack.push(9);
 
-        minStack.getMin();
+        minStack.top();  //9
+//        minStack.getMin();
 
-        minStack.top();
+//        minStack.top();
 
-        minStack.pop();
-        minStack.getMin();
+//        minStack.pop();
+        minStack.getMin();  // 2
+
+        minStack.pop(); // 删除 9
+        minStack.top();  //2
+        minStack.getMin();  //2
+
 
     }
 }
